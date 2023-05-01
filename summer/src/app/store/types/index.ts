@@ -1,4 +1,4 @@
-import { IVacancy } from '../../api';
+import { IVacancy } from '../../../shared/api';
 
 
 export type VacanciesState = {

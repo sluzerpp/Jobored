@@ -1,40 +1,27 @@
-import { createContext, useReducer } from 'react';
-import { AppContextValue, SearchState, VacanciesState } from './types';
+import React, { createContext, useState } from 'react';
+import { AppContextValue } from './types';
+import { useVacanciesStore } from './hooks';
 
-export const AppContext = createContext<AppContextValue | null>(null);
+export const AppContext = createContext<AppContextValue>({
+  useFetchVacancies: () => [],
+  search: '',
+  setSearch: () => [],
+});
 
-const AppProvider = (component: () => React.ReactNode) => {
-  const [vacancies, setVacancies] = useReducer(
-    (state: VacanciesState, newState: Partial<VacanciesState>) => ({
-      ...state,
-      ...newState,
-    }),
-    {
-      vacancies: [],
-      isLoading: false,
-    }
-  );
+const AppProvider = ({ children }: { children: React.ReactNode }) => {
+  const useFetchVacancies = useVacanciesStore();
 
-  const [search, setSearch] = useReducer(
-    (state: SearchState, newState: Partial<SearchState>) => ({
-      ...state,
-      ...newState,
-    }),
-    {
-      search: '',
-    }
-  );
+  const [search, setSearch] = useState('');
 
   return (
     <AppContext.Provider value={
       {
-        vacancies,
-        setVacancies,
+        useFetchVacancies,
         search,
         setSearch
       }
     }>
-      {component()}
+      {children}
     </AppContext.Provider>
   );
 };

@@ -1,10 +1,21 @@
+import Header from 'widgets/Header';
 import { Routing } from '../pages';
+import { useAuth } from './hooks/useAuth';
 import './index.scss';
 import { withProviders } from './providers';
 
 const App = () => {
+  const isAuth = useAuth();
+
   return (
-    <Routing></Routing>
+    isAuth
+    ? (
+      <>
+        <Header></Header>
+        <Routing></Routing>
+      </>
+    )
+    : <h2>Loading...</h2>
   )
 }
 

@@ -1,9 +1,10 @@
-import { IVacancy } from '../../../shared/api';
+import { FilterParams, IVacancy } from 'shared/api';
 
 
 export type VacanciesState = {
   vacancies: IVacancy[],
   isLoading: boolean,
+  params?: FilterParams
 }
 
 export type SearchState = {
@@ -11,8 +12,7 @@ export type SearchState = {
 }
 
 export type AppContextValue = {
-  vacancies: VacanciesState,
-  setVacancies: React.Dispatch<Partial<VacanciesState>>,
-  search: SearchState,
-  setSearch: React.Dispatch<Partial<SearchState>>,
+  useFetchVacancies: (params: FilterParams) => (boolean | IVacancy[])[],
+  search: string,
+  setSearch: React.Dispatch<React.SetStateAction<string>>,
 }

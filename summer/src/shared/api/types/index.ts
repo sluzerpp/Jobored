@@ -21,6 +21,7 @@ export type FilterParams = {
   payment_from?: number,
   payment_to?: number,
   catalogues?: number,
+  page?: number,
 }
 
 export type IVacanciesResponse = {

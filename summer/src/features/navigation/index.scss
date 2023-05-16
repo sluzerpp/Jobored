@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+
+  &__link {
+    font-size: 1.6rem;
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--Inter);
+
+    &.active {
+      font-weight: 500;
+      color: var(--blue-500);
+      font-family: var(--Inter)
+    }
+  }
+}

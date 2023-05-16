@@ -1,0 +1,5 @@
+.vacancies-widget {
+  display: grid;
+  grid-template-columns: minmax(auto, 315px) minmax(400px, 1fr);
+  gap: 2.8rem;
+}

@@ -10,10 +10,12 @@ const App = () => {
   return (
     isAuth
     ? (
-      <>
+      <div className='app'>
         <Header></Header>
-        <Routing></Routing>
-      </>
+        <div className="container">
+          <Routing></Routing>
+        </div>
+      </div>
     )
     : <h2>Loading...</h2>
   )

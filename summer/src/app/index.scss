@@ -1,1 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&family=Roboto&display=swap');
 @import './styles/vars.scss';
+
+html {
+  font-size: .625rem;
+}
+
+.app {
+  background-color: #F7F7F8;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1156px;
+  padding: 0 2rem;
+}

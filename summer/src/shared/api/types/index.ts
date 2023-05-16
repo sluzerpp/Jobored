@@ -26,4 +26,5 @@ export type FilterParams = {
 
 export type IVacanciesResponse = {
   objects: IVacancy[],
+  total: number,
 }

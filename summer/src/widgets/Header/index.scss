@@ -1,0 +1,37 @@
+.header {
+  background-color: var(--white);
+  padding: 2.4rem 0 ;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  &__inner {
+    display: flex;
+    justify-content: left;
+    position: relative;
+  }
+
+  &__logo {
+    display: flex;
+    font-family: var(--Poppins);
+    font-weight: 600;
+    font-size: 2.4rem;
+    gap: 1.2rem;
+    color: var(--black);
+    align-items: center;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+      fill: var(--blue-500);
+    }
+  }
+
+  .nav {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}

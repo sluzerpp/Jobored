@@ -1,0 +1,90 @@
+.button {
+  border-radius: 8px;
+  padding: 0.95rem 2rem;
+  font-size: 1.4rem;
+  background-color: var(--blue-500);
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  font-family: var(--Inter);
+  line-height: 2.1rem;
+
+  &:hover {
+    background-color: var(--blue-400);
+  }
+
+  &:active {
+    background-color: var(--blue-600);
+  }
+
+  &--small {
+    padding: .55rem 2rem;
+  }
+}
+
+.text-button {
+  cursor: pointer;
+  line-height: 2rem;
+  color: var(--grey-500);
+  display: flex;
+  gap: 4px;
+  font-size: 1.4rem;
+  border: none;
+  padding: 0;
+  font-family: var(--Inter);
+  background-color: transparent;
+  align-items: center;
+
+  svg {
+    stroke: var(--grey-500);
+  }
+
+  &:hover {
+    color: var(--blue-400);
+
+    svg {
+      stroke: var(--blue-400);
+    }
+  }
+
+  &:active {
+    color: var(--blue-500);
+
+    svg {
+      stroke: var(--blue-500);
+    }
+  }
+}
+
+.icon-button {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  outline: transparent;
+  border: none;
+
+  svg {
+    stroke: var(--grey-500);
+  }
+
+  &:hover {
+    svg {
+      stroke: var(--blue-400);
+    }
+  }
+
+  &.active {
+    svg {
+      fill: var(--blue-500);
+      stroke: var(--blue-500);
+    }
+  }
+
+  &--small {
+    width: 12px;
+    height: 12px;
+  }
+}

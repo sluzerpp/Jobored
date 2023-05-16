@@ -1,0 +1,37 @@
+.filters {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--grey-200);
+  background-color: var(--white);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3.2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: var(--black);
+    font-family: var(--Inter);
+    font-weight: 700;
+  }
+
+  &__group {
+    display: grid;
+    gap: .8rem;
+    margin-bottom: 2rem;
+
+    &-title {
+      font-weight: 700;
+      font-family: var(--Inter);
+      font-size: 1.6rem;
+    }
+  }
+  
+  .button {
+    width: 100%;
+  }
+}

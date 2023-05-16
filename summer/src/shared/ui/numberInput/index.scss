@@ -1,0 +1,64 @@
+.number-input {
+  display: flex;
+  border-radius: 8px;
+  border: 1px solid var(--grey-300);
+  padding: 1.1rem 1.2rem;
+  padding-right: 2.6rem;
+  position: relative;
+  gap: .5rem;
+
+  &__input {
+    font-size: 1.4rem;
+    font-family: var(--Inter);
+    color: var(--black);
+    line-height: 2rem;
+    outline: transparent;
+    border: none;
+    width: 100%;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  }
+
+  &:hover {
+    border-color: var(--blue-400);
+  }
+
+  &.focus {
+    border-color: var(--blue-500);
+  }
+
+  &::placeholder {
+    color: var(--grey-500);
+  }
+
+  &__controls {
+    position: absolute;
+    display: grid;
+    gap: 2px;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__top,
+  &__bottom {
+    stroke: var(--grey-500);
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    &:hover {
+      stroke: var(--blue-400);
+    }
+
+    &:active {
+      stroke: var(--blue-500);
+    }
+  }
+}

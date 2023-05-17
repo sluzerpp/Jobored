@@ -56,7 +56,7 @@ export const VacanciesFeature = ({ isLoading, total, vacancies, setParams }: Vac
   return (
     <div className='vacancies-feature'>
       <div className="vacancies__search">
-        <SearchBar onSubmit={searchSubmitHandler}></SearchBar>
+        <SearchBar data-elem="search-input" onSubmit={searchSubmitHandler}></SearchBar>
       </div>
       <div className="vacancies__items">
         {

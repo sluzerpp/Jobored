@@ -54,7 +54,7 @@ export const SearchBar = ({ onSubmit }: SearchBarProps) => {
         onBlur={onBlurHandler}
         onChange={onChangeHandler}
       />
-      <ButtonSmall onClick={onSubmitHandler}>Поиск</ButtonSmall>
+      <ButtonSmall data-elem="search-button" onClick={onSubmitHandler}>Поиск</ButtonSmall>
     </div>
   )
 }

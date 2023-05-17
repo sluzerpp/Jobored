@@ -26,3 +26,21 @@ html {
     max-width: 813px;
   }
 }
+
+@media (max-width: 1000px) {
+  html {
+    font-size: .550rem;
+  }
+}
+
+@media (max-width: 740px) {
+  html {
+    font-size: .500rem;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: .400rem;
+  }
+}

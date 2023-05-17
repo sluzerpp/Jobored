@@ -35,3 +35,32 @@
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 740px) {
+  .header {
+    
+    &__inner {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .nav {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      transform: none;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+      justify-content: auto;
+    }
+  }
+}

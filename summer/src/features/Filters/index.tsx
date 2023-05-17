@@ -60,17 +60,19 @@ export const FiltersFeature = memo(({ params, setParams, cataloguesData }: Filte
       <div className="filters__group">
         <div className="filters__group-title">Оклад</div>
         <NumberInput
+          data-elem="salary-from-input"
           value={paymentFrom}
           onChange={onPaymentFromChangeHandler}
           placeholder='От'
         ></NumberInput>
         <NumberInput
+        data-elem="salary-to-input"
           value={paymentTo}
           onChange={onPaymentToChangeHandler}
           placeholder='До'
         ></NumberInput>
       </div>
-      <Button onClick={onSubmitClickHandler}>Применить</Button>
+      <Button data-elem="search-button" onClick={onSubmitClickHandler}>Применить</Button>
     </div>
   )
 });

@@ -10,14 +10,14 @@ type VacancyCardProps = {
 
 export const VacancyCard = ({ vacancy, onSaveButton, isSave }: VacancyCardProps) => {
   return (
-    <div className='vacancy-card'>
+    <div className='vacancy-card' data-elem={`vacancy-${vacancy.id}`}>
       <div className="vacancy-card__header">
         <a href={`/detailed/${vacancy.id}`} className="vacancy-card__title">
           <h2>
             {vacancy.profession}
           </h2>
         </a>
-        <SaveButton isActive={isSave} onClick={onSaveButton}></SaveButton>
+        <SaveButton data-elem={`vacancy-${vacancy.id}-shortlist-button`} isActive={isSave} onClick={onSaveButton}></SaveButton>
       </div>
       <div className="vacancy-card__info">
         <div className="vacancy-card__payment">

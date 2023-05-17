@@ -1,9 +1,10 @@
 import { CLIENT_HR, CLIENT_ID, CLIENT_LOGIN, CLIENT_PASSWORD, CLIENT_SECRET } from 'shared/constants';
-import { $authHost, FilterParams, IToken, IVacanciesResponse, IVacancy } from '..';
+import { $authHost, FilterParams, ICatalog, IToken, IVacanciesResponse, IVacancy } from '..';
 
 export const fetchVacancies = async (params?: FilterParams) => {
   let route = '/vacancies?published=1';
   if (params) {
+    console.log(params);
     const { catalogues, keyword, payment_from, payment_to, page } = params;
     route += !catalogues ? '' : `&catalogues=${catalogues}`;
     route += !keyword ? '' : `&keyword=${keyword}`;
@@ -11,18 +12,19 @@ export const fetchVacancies = async (params?: FilterParams) => {
     route += !payment_to ? '' : `&payment_to=${payment_to}`;
     route += !page ? '' : `&page=${page}`;
   }
-  const response = await $authHost.get<IVacanciesResponse>(route, {
-    method: 'GET',
-  });
+  const response = await $authHost.get<IVacanciesResponse>(route);
   return response.data;
 };
 
 export const fetchOneVacancy = async (id: number) => {
-  const response = await $authHost.get<IVacancy>(`/vacancies/${id}`, {
-    method: 'GET',
-  });
+  const response = await $authHost.get<IVacancy>(`/vacancies/${id}`);
   return response.data;
 };
+
+export const fetchCatalogues = async () => {
+  const response = await $authHost.get<ICatalog[]>(`/catalogues`)
+  return response.data;
+}
 
 export const fetchAuthToken = async () => {
   let route = '/oauth2/password?';

@@ -1,0 +1,66 @@
+.vacancy-card {
+  display: grid;
+  width: 100%;
+  border-radius: 12px;
+  padding: 2.4rem;
+  background-color: var(--white);
+  border: 1px solid var(--grey-200);
+  gap: 1.3rem;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    color: var(--blue-500);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--Inter);
+    text-align: left;
+
+    h2 {
+      font-size: 2rem;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  &__dot {
+    font-size: 20px;
+    line-height: 2.1rem;
+    font-weight: 400;
+    font-family: var(--Poppins);
+    color: var(--grey-600);
+  }
+
+  &__payment {
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: var(--Inter);
+    color: var(--black);
+  }
+
+  &__time {
+    font-size: 1.6rem;
+    font-family: var(--Inter);
+    color: var(--black);
+  }
+
+  &__place {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 1.6rem;
+    font-family: var(--Inter);
+    color: var(--black);
+  }
+}

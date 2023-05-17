@@ -1,24 +1,40 @@
 import React, { createContext, useState } from 'react';
-import { AppContextValue } from './types';
-import { useVacanciesStore } from './hooks';
+import { AppContextValue, CataloguesState, VacanciesState } from './types';
+import { useCataloguesStore, useVacanciesStore } from './hooks';
+import { FilterParams } from 'shared/api';
 
 export const AppContext = createContext<AppContextValue>({
-  useFetchVacancies: () => [],
+  useFetchVacancies: (): VacanciesState => ({
+    total: 0,
+    vacancies: [],
+    isLoading: false,
+  }),
+  useFetchCatalogues: (): CataloguesState => ({
+    isLoading: false,
+    catalogues: [],
+  }),
+  params: {},
+  setParams: () => [],
   search: '',
   setSearch: () => [],
 });
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const useFetchVacancies = useVacanciesStore();
+  const useFetchCatalogues = useCataloguesStore();
 
   const [search, setSearch] = useState('');
+  const [params, setParams] = useState<FilterParams>({});
 
   return (
     <AppContext.Provider value={
       {
+        useFetchCatalogues,
         useFetchVacancies,
         search,
-        setSearch
+        setSearch,
+        params,
+        setParams
       }
     }>
       {children}

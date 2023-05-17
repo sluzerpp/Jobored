@@ -3,7 +3,9 @@ import { VacanciesWidget } from 'widgets/VacanciesWidget';
 const Catalog = () => {
   return (
     <div>
-      <VacanciesWidget></VacanciesWidget>
+      <div className="container">
+        <VacanciesWidget></VacanciesWidget>
+      </div>
     </div>
   )
 }

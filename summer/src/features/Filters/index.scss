@@ -3,6 +3,7 @@
   border-radius: 12px;
   border: 1px solid var(--grey-200);
   background-color: var(--white);
+  height: min-content;
 
   &__header {
     display: flex;

@@ -3,28 +3,27 @@ import './index.scss';
 import { SelectCustom } from 'shared/ui/select';
 import { FilterParams } from 'shared/api';
 import { memo, useState } from 'react';
+import { CataloguesState } from 'app/store/types';
 
 type FiltersFeatureProps = {
-  params: FilterParams;
-  setParams: CallableFunction;
-  selectOptions: {
-    value: string;
-    label: string;
-  }[];
+  params: FilterParams,
+  setParams: React.Dispatch<React.SetStateAction<FilterParams>>;
+  cataloguesData: CataloguesState;
 }
 
-export const FiltersFeature = memo(({ params, setParams, selectOptions }: FiltersFeatureProps) => {
-  const [paymentFrom, setPaymentFrom] = useState('');
-  const [paymentTo, setPaymentTo] = useState('');
-  const [branch, setBranch] = useState<string>('');
+export const FiltersFeature = memo(({ params, setParams, cataloguesData }: FiltersFeatureProps) => {
+  const { payment_from, payment_to, catalogues } = params;
+  const [paymentFrom, setPaymentFrom] = useState(payment_from ? String(payment_from) : '');
+  const [paymentTo, setPaymentTo] = useState(payment_to ? String(payment_to) : '');
+  const [branch, setBranch] = useState(catalogues ? String(catalogues) : '');
 
   const onSubmitClickHandler = () => {
-    setParams({
-      ...params,
-      paymentFrom,
-      paymentTo,
-      branch: Number(branch),
-    })
+    setParams && setParams((prev) => ({
+      ...prev,
+      payment_from: Number(paymentFrom),
+      payment_to: Number(paymentTo),
+      catalogues: Number(branch),
+    }))
   };
 
   const onResetButtonClick = () => {
@@ -53,7 +52,9 @@ export const FiltersFeature = memo(({ params, setParams, selectOptions }: Filter
         <SelectCustom
           value={branch}
           setValue={setBranch}
-          options={selectOptions}
+          options={
+            cataloguesData.catalogues.map((el) => ({ label: el.title_rus, value: String(el.key) }))
+          }
         ></SelectCustom>
       </div>
       <div className="filters__group">

@@ -1,0 +1,38 @@
+.vacancies-feature {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .mantine-Pagination-control {
+    font-size: 1.6rem;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    color: var(--black);
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &[data-active] {
+      background-color: var(--blue-500);
+      color: var(--white);
+    }
+  }
+}
+
+.vacancies__search {
+  margin-bottom: 1.6rem;
+}
+
+.vacancies__items {
+  margin-bottom: 4rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.vacancies__pagination {
+  display: flex;
+  justify-content: center;
+}

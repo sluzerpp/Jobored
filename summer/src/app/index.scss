@@ -5,13 +5,24 @@ html {
   font-size: .625rem;
 }
 
+#root, body, html {
+  height: 100%;
+  min-height: 100vh !important;
+}
+
 .app {
   background-color: #F7F7F8;
   min-height: 100vh;
+  padding-bottom: 4.4rem;
 }
 
 .container {
   width: 100%;
   max-width: 1156px;
   padding: 0 2rem;
+  margin: 0 auto;
+
+  &--small {
+    max-width: 813px;
+  }
 }

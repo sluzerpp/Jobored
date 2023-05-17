@@ -1,21 +1,18 @@
 import { AppContext } from 'app/store'
 import { FiltersFeature } from 'features/Filters';
-import { useContext, useState } from 'react'
-import { FilterParams } from 'shared/api';
+import { useContext } from 'react'
 import './index.scss';
 import { VacanciesFeature } from 'features/vacancies';
 
 export const VacanciesWidget = () => {
-  const { useFetchVacancies } = useContext(AppContext);
-  const [params, setParams] = useState<FilterParams>({});
-  const [loading, vacancies] = useFetchVacancies(params);
-
-  console.log(loading);
+  const { useFetchVacancies, params, setParams, useFetchCatalogues } = useContext(AppContext);
+  const fetchedVacanciesData = useFetchVacancies(params);
+  const fetchedCataloguesData = useFetchCatalogues();
 
   return (
     <div className="vacancies-widget">
-      <FiltersFeature selectOptions={[{ value: '1', label: 'Lox' }]} params={params} setParams={setParams}></FiltersFeature>
-      <VacanciesFeature></VacanciesFeature>
+      <FiltersFeature cataloguesData={fetchedCataloguesData} params={params} setParams={setParams}></FiltersFeature>
+      <VacanciesFeature {...fetchedVacanciesData} setParams={setParams}></VacanciesFeature>
     </div> 
   )
 }

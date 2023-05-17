@@ -1,0 +1,67 @@
+.vacancies__not-found {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  img {
+    width: 24rem;
+    height: 23rem;
+  }
+
+  h2 {
+    color: #343A40;
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: var(--Inter);
+    margin: 0;
+    padding: 0;
+  }
+
+  .vacancies__navigate {
+    border-radius: 8px;
+    background-color: var(--blue-100);
+    color: var(--blue-600);
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: var(--Inter);
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 1rem 2.4rem;
+  }
+}
+
+.vacancies-feature {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .mantine-Pagination-control {
+    font-size: 1.6rem;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    color: var(--black);
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &[data-active] {
+      background-color: var(--blue-500);
+      color: var(--white);
+    }
+  }
+}
+
+.vacancies__items {
+  margin-bottom: 4rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.vacancies__pagination {
+  display: flex;
+  justify-content: center;
+}

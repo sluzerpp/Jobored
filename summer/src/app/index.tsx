@@ -3,6 +3,7 @@ import { Routing } from '../pages';
 import { useAuth } from './hooks/useAuth';
 import './index.scss';
 import { withProviders } from './providers';
+import { Spinner } from 'shared/ui';
 
 const App = () => {
   const isAuth = useAuth();
@@ -12,12 +13,10 @@ const App = () => {
     ? (
       <div className='app'>
         <Header></Header>
-        <div className="container">
-          <Routing></Routing>
-        </div>
+        <Routing></Routing>
       </div>
     )
-    : <h2>Loading...</h2>
+    : <Spinner></Spinner>
   )
 }
 

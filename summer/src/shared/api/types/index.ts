@@ -28,3 +28,8 @@ export type IVacanciesResponse = {
   objects: IVacancy[],
   total: number,
 }
+
+export type ICatalog = {
+  title_rus: string;
+  key: number;
+}

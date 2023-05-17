@@ -30,7 +30,7 @@
     font-family: var(--Inter);
     color: var(--black);
     padding: .8rem 1.2rem;
-    width: 100%;
+    white-space: pre-wrap;
 
     &[data-hovered] {
       background-color: var(--blue-100);

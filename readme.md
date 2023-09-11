@@ -1,5 +1,5 @@
 # Job Site
-Project and application where you can find site for job search.
+Project and application where you can find site for job search. This app use third party API. (I lost the link to the API, there is only link to the proxy server between app and api)
 ## Deploy
 [Go to the Site Deploy](https://jobored-sluzerpp.netlify.app)
 ## Screenshot
